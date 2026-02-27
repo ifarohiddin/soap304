@@ -1,8 +1,9 @@
 import express from 'express';
-import { usersController } from '../controllers/user.controller.ts';
+import { pipeline } from '../soap/pipeline.ts';
+
 
 const router = express.Router();
-router.post("/", usersController)
+router.post("/", pipeline)
 
 
 export default router

@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import userRoutes from './routes/user.route.ts';
+import soapRoutes from './routes/soap.route.ts';
 import bodyParser from 'body-parser';
 
 
@@ -9,7 +9,7 @@ dotenv.config();
 
 
 app.use(bodyParser.text({type: "text/xml"}))
-app.use('/api/soap', userRoutes)
+app.use('/api/soap', soapRoutes)
 
 
 
