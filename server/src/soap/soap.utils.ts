@@ -1,12 +1,9 @@
-export const errorResponseBuilder = () => {
-       return ( `<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/">
+export const errorResponseBuilder = (errorMessage: string = 'Server Error') => {
+    return (`<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
         <soap:Body>
             <soap:Fault>
-                <faultcode></faultcode>
-                <faultstring>cfhbdjf fgsdgjhf sdjfjfgh sfhgdj</faultstring>
-                <datails>
-                    <message>fdskjgjdskgdsjk</message>
-                </datails>
+                <faultcode>Server</faultcode>
+                <faultstring>${errorMessage}</faultstring>
             </soap:Fault>
         </soap:Body>
     </soap:Envelope>`)
@@ -14,7 +11,7 @@ export const errorResponseBuilder = () => {
 
 
 export const successResponseBuilder = () => {
-    return ( `<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/">
+    return (`<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/">
         <soap:Body>
             <getAllUsersResponse>
                 <Users>

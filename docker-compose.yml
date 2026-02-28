@@ -16,6 +16,7 @@ services:
     build: ./server
     environment:
       PORT: ${PORT}
+      CHOKIDAR_USEPOLLING: "true"
     depends_on:
       - db
     ports:
